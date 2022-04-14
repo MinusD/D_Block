@@ -20,8 +20,9 @@
 Предусмотреть хотя бы в 3 местах обработку возможных исключений.
 В каждом модуле провести подробное тестирование всех создаваемых объектов и функций.
 """
-
+import pickle
 from Task1.Hospital import *
+
 
 if __name__ == '__main__':
     try:
@@ -72,6 +73,13 @@ if __name__ == '__main__':
         print(hos)
         hos - doc3
         print(hos)
+        hos + doc
+        hos + doc2
+        hos + doc3
+        hos + doc4
+        with open('data.pickle', 'wb') as f:
+            pickle.dump(hos, f, fix_imports=True)
+            pickle.dump(doc, f, fix_imports=True)
 
     except AssertionError:
         print("TEST ERROR")
